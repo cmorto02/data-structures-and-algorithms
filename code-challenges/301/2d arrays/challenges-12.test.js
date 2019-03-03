@@ -45,7 +45,16 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  const totals = [];
+  for(let i=0; i < hoursOpen.length; i++){
+    let dailyTotal = [];
+    for(let j=0; j < cookieStores.length; j++){
+      dailyTotal.sales += data[j][i];
+    }
+    dailyTotal.time = hours[i];
+    totals.push(dailyTotal);
+  }
+  return totals;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +76,7 @@ const errands = [
 ]
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  return errands[2].items[1].quantity;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,7 +98,15 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  for(let i=0; i < 4; i++){
+    for(let j=0; j < 4; j++){
+      if(board[row][col] === '#'){
+        return 'hit';
+      } else {
+        return 'miss';
+      }
+    }
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,7 +118,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let product = 1;
+  for(let i = 0; i < numbers.length; i++) {
+    for(let j = 0; j < numbers[i].length; j++) {
+      product = product * numbers[i][j];
+    }
+  }
+  return product;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,7 +144,15 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let days = 0;
+  let temp = 0;
+  for(let i = 0; i < weather.length; i++){
+    for(let j = 0; j < weather[i].length; j++){
+      days++;
+      temp = temp + weather[i][j];
+    }
+  }
+  return temp/days;
 }
 
 /* ------------------------------------------------------------------------------------------------
