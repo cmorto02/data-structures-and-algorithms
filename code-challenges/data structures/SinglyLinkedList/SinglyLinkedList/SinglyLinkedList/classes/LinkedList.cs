@@ -7,29 +7,19 @@ namespace SinglyLinkedList.classes
     class LinkedList
     {
         public Node Head { get; set; }
-        public void AddFirst (int data)
-        {
-            Node add = new Node
-            {
-                value = data,
-                next = Head
-            };
+        public Node Current { get; set; }
 
-            Head = add;
-        }
-        public void printAllNodes()
-        {
-            Node current = Head;
-            while (current != null)
-            {
-                Console.WriteLine(current.value);
-                current = current.next;
-            }
-        }
-        public void Insert(int value)
+        public void Insert (int data)
         {
             try
             {
+                Node node = new Node
+                {
+                    Value = data,
+                    Next = Head
+                };
+
+                Head = node;
 
 
             }
@@ -40,9 +30,28 @@ namespace SinglyLinkedList.classes
                 throw;
             }
         }
-        public void Includes()
+        public void printAllNodes()
         {
-            Node addNode = new Node
+            Current = Head;
+            while (Current != null)
+            {
+                Console.WriteLine(Current.Value);
+                Current = Current.Next;
+            }
+        }
+        
+        public bool Includes(int data)
+        {
+            Current = Head;
+            while (Current.Next != null)
+            {
+                if (Current.Value == data)
+                {
+                    return true;
+                }
+                Current = Current.Next;
+            }
+            return false;
         }
 
     }

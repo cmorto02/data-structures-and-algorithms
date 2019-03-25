@@ -6,7 +6,7 @@ namespace SinglyLinkedList.classes
 {
     public class Node
     {
-        public int value { get; set; }
-        public Node next { get; set; }
+        public int Value { get; set; }
+        public Node Next { get; set; }
     }
 }
