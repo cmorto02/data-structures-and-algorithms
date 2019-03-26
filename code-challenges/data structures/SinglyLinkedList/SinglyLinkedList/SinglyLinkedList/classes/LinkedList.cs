@@ -54,5 +54,48 @@ namespace SinglyLinkedList.classes
             return false;
         }
 
+        public void Append(int addValue)
+        {
+            Current = Head;
+            while (Current.Next != null)
+            {
+                Current = Current.Next;
+            }
+            Node node = new Node
+            {
+                Value = addValue,
+                Next = null
+            };
+            Current.Next = node;
+        }
+
+        public void InsertAfter(int searchValue, int addValue)
+        {
+            Current = Head;
+            while (Current.Value != searchValue)
+            {
+                Current = Current.Next;
+            }
+            Node newNode = new Node
+            {
+                Value = addValue,
+                Next = Current.Next
+            };
+            Current.Next = newNode;
+        }
+        public void InsertBefore(int searchValue, int addValue)
+        {
+            Current = Head;
+            while (Current.Next.Value != searchValue)
+            {
+                Current = Current.Next;
+            }
+            Node newNode = new Node
+            {
+                Value = addValue,
+                Next = Current.Next
+            };
+            Current.Next = newNode;
+        }
     }
 }
