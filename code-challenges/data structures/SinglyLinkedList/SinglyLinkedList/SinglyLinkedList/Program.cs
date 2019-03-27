@@ -69,7 +69,14 @@ namespace SinglyLinkedList
             Console.WriteLine("");
             newLink.printAllNodes();
 
-
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Please entere the node you want to get to.");
+            string nodeNumberString = Console.ReadLine();
+            int nodeNumberInt = Convert.ToInt32(nodeNumberString);
+            newLink.KthFromTheEnd(nodeNumberInt);
+            Console.WriteLine("");
+            Console.WriteLine("");
         }
     }
 }

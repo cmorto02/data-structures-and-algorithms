@@ -97,5 +97,24 @@ namespace SinglyLinkedList.classes
             };
             Current.Next = newNode;
         }
+        public Node KthFromTheEnd(int kth)
+        {
+            Current = Head;
+            int amountOfNodes = 1;
+            while (Current.Next != null)
+            {
+                amountOfNodes++;
+                Current = Current.Next;
+            }
+            int nodeNumber = 1;
+            Current = Head;
+            while (nodeNumber != (amountOfNodes - kth))
+            {
+                nodeNumber++;
+                Current = Current.Next;
+            }
+            Console.WriteLine(Current.Value);
+            return Current;
+        }
     }
 }
