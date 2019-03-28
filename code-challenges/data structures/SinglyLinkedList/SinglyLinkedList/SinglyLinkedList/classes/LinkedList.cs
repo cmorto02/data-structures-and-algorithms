@@ -4,10 +4,11 @@ using System.Text;
 
 namespace SinglyLinkedList.classes
 {
-    class LinkedList
+    public class LList
     {
         public Node Head { get; set; }
         public Node Current { get; set; }
+        
 
         public void Insert (int data)
         {
@@ -30,7 +31,7 @@ namespace SinglyLinkedList.classes
                 throw;
             }
         }
-        public void printAllNodes()
+        public void PrintAllNodes()
         {
             Current = Head;
             while (Current != null)
@@ -116,5 +117,6 @@ namespace SinglyLinkedList.classes
             Console.WriteLine(Current.Value);
             return Current;
         }
+        
     }
 }
