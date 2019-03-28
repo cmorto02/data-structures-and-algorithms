@@ -3,21 +3,21 @@ using System;
 
 namespace SinglyLinkedList
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            LinkedList newLink = new LinkedList();
+            LList newLink = new LList();
             newLink.Insert(4);
             newLink.Insert(345);
             newLink.Insert(645373545);
-            newLink.printAllNodes();
+            newLink.PrintAllNodes();
 
             Console.WriteLine("Please entere a number for the new node");
             string newInt = Console.ReadLine();
             int nodeValue = Convert.ToInt32(newInt);
             newLink.Insert(nodeValue);
-            newLink.printAllNodes();
+            newLink.PrintAllNodes();
 
             Console.WriteLine("Please entere a number to search.");
             string searchString = Console.ReadLine();
@@ -33,7 +33,7 @@ namespace SinglyLinkedList
             newLink.Append(addInt);
             Console.WriteLine("");
             Console.WriteLine("");
-            newLink.printAllNodes();
+            newLink.PrintAllNodes();
 
 
             Console.WriteLine("");
@@ -50,7 +50,7 @@ namespace SinglyLinkedList
 
             Console.WriteLine("");
             Console.WriteLine("");
-            newLink.printAllNodes();
+            newLink.PrintAllNodes();
 
 
             Console.WriteLine("");
@@ -67,7 +67,7 @@ namespace SinglyLinkedList
 
             Console.WriteLine("");
             Console.WriteLine("");
-            newLink.printAllNodes();
+            newLink.PrintAllNodes();
 
             Console.WriteLine("");
             Console.WriteLine("");
