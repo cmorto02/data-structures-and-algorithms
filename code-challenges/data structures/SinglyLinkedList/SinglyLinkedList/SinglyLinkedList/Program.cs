@@ -5,6 +5,10 @@ namespace SinglyLinkedList
 {
     public class Program
     {
+        /// <summary>
+        /// the below is calling all of the methods created in the LinkedList class
+        /// </summary>
+        /// <param name="args">i dont know the args going into main</param>
         static void Main(string[] args)
         {
             LList newLink = new LList();

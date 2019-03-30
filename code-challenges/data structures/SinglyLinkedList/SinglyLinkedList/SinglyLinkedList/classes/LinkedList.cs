@@ -9,7 +9,10 @@ namespace SinglyLinkedList.classes
         public Node Head { get; set; }
         public Node Current { get; set; }
         
-
+        /// <summary>
+        /// This method inserts a node at the head of the list with the value as a parameter of the method
+        /// </summary>
+        /// <param name="data">the value of the new node</param>
         public void Insert (int data)
         {
             try
@@ -31,6 +34,10 @@ namespace SinglyLinkedList.classes
                 throw;
             }
         }
+        /// <summary>
+        /// This method creates an array of the values of the nodes in the linked list and returns that array
+        /// </summary>
+        /// <returns>array of the values of the nodes in the linked list</returns>
         public int[] Print()
         {
             int length = 0;
@@ -52,6 +59,11 @@ namespace SinglyLinkedList.classes
             Console.WriteLine("[{0}]", string.Join(", ", allValues));
             return allValues;
         }
+        /// <summary>
+        /// checks to see if the input value is in the linked list
+        /// </summary>
+        /// <param name="data">the search value</param>
+        /// <returns>true or false, whether the value is in the linked list or not</returns>
         public bool Includes(int data)
         {
             Current = Head;
@@ -65,6 +77,10 @@ namespace SinglyLinkedList.classes
             }
             return false;
         }
+        /// <summary>
+        /// Adds a value to the end of the linked list
+        /// </summary>
+        /// <param name="addValue">the value to add</param>
         public void Append(int addValue)
         {
             Current = Head;
@@ -79,6 +95,11 @@ namespace SinglyLinkedList.classes
             };
             Current.Next = node;
         }
+        /// <summary>
+        /// inserts a node after a specified value that is searched
+        /// </summary>
+        /// <param name="searchValue">the value to search for in the list</param>
+        /// <param name="addValue">the value you wish to add to the list</param>
         public void InsertAfter(int searchValue, int addValue)
         {
             Current = Head;
@@ -93,6 +114,11 @@ namespace SinglyLinkedList.classes
             };
             Current.Next = newNode;
         }
+        /// <summary>
+        /// inserts a node with a specific value before a specified value in the linked list
+        /// </summary>
+        /// <param name="searchValue">the value to search</param>
+        /// <param name="addValue">the value of the node you wish to add</param>
         public void InsertBefore(int searchValue, int addValue)
         {
             Current = Head;
@@ -118,6 +144,11 @@ namespace SinglyLinkedList.classes
             };
             Current.Next = newNode;
         }
+        /// <summary>
+        /// returns the value of the node that is kth from the end of the list
+        /// </summary>
+        /// <param name="kth">the kth number from the end that you wish to have the value of</param>
+        /// <returns>the node that is kth from the end</returns>
         public Node KthFromTheEnd(int kth)
         {
             try
