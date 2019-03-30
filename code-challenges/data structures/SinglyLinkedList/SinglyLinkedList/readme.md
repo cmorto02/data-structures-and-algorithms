@@ -32,33 +32,35 @@ A C# implementation of a `Singly Linked List`. Singly Linked Lists contain indiv
 ------------------------------
 
 ## Visuals
-***[Add screenshots of your methods in action]***
+
+![Image 1](https://github.com/cmorto02/data-structures-and-algorithms/blob/master/code-challenges/data%20structures/SinglyLinkedList/SinglyLinkedList/LinkedListTesting/images/SLL.JPG)
 
 ##### Insert Method
-***[In your own words explain what this method is doing]***
 *The Insert Method takes in an int as a parameter. A new Node is then created using the* 
 *int param as its Value. The new Node is then placed in the Linked List at the Head and*
 *the previous Head is assigned as the new Nodes Next.*
-![Image 1](https://via.placeholder.com/750x500)
 ##### Includes Method
-***[In your own words explain what this method is doing]***
 *The Includes Method takes in an int as a parameter then iterates through the Nodes of the*
 *Linked List checking all the Values. If the value is found True is returned, if not then*
 *False is returned.*
-![Image 1](https://via.placeholder.com/750x500)
 ##### Print Method
-***[In your own words explain what this method is doing]***
 *The Print Method displays a well formatted depiction of the current state of the*
 *Linked List by iterating over all Nodes.*
-![Image 1](https://via.placeholder.com/750x500)
+##### Append Method
+*The Append Method takes in an int as the parameter and creates a new node at the end of the linked list*
+##### InsertAfter Method
+*The InsertAfter Method takes in two ints as parameters and creates a new node with the value of the second parameter after the node with the value of the first parameter.*
+##### InsertBefore Method
+*The InsertAfter Method takes in two ints as parameters and creates a new node with the value of the second parameter before the node with the value of the first parameter.*
+##### KthFromTheEnd Method
+The KthFromTheEndMethod takes in an int as a parameter and returns the node that is the the parameter places from the end of the list.
 
 ------------------------------
 
 ## Change Log
-***[The change log will list any changes made to the code base. This includes any changes from TA/Instructor feedback]***
-1.3: *Added new passing tests for Contains method* - 17 Nov 2012
-1.2: *Fixed bug where Next relation was being lost on Insert* - 14 Nov 2012
-1.1: *Fixed formatting for the Print method* - 13 Nov 2012
+1.3: *Added all of the unit testing, summary comments, and refactored the print method* 30 March 2019
+1.2: *Added the kth from the end method* 27 March 2019
+1.1: *Added the append, insertbefore and insertafter methods.* 26 March 2019
 
 ------------------------------
 
