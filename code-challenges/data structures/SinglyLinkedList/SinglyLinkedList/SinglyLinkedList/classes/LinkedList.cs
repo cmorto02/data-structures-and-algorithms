@@ -31,16 +31,27 @@ namespace SinglyLinkedList.classes
                 throw;
             }
         }
-        public void PrintAllNodes()
+        public int[] Print()
         {
+            int length = 0;
             Current = Head;
             while (Current != null)
             {
-                Console.WriteLine(Current.Value);
+                length++;
                 Current = Current.Next;
             }
+            int[] allValues = new int[length];
+            Current = Head;
+            int i = 0;
+            while (Current != null)
+            {
+                allValues[i] = Current.Value;
+                i++;
+                Current = Current.Next;
+            }
+            Console.WriteLine("[{0}]", string.Join(", ", allValues));
+            return allValues;
         }
-        
         public bool Includes(int data)
         {
             Current = Head;
@@ -54,7 +65,6 @@ namespace SinglyLinkedList.classes
             }
             return false;
         }
-
         public void Append(int addValue)
         {
             Current = Head;
@@ -69,7 +79,6 @@ namespace SinglyLinkedList.classes
             };
             Current.Next = node;
         }
-
         public void InsertAfter(int searchValue, int addValue)
         {
             Current = Head;
@@ -87,6 +96,17 @@ namespace SinglyLinkedList.classes
         public void InsertBefore(int searchValue, int addValue)
         {
             Current = Head;
+            if (searchValue == Head.Value)
+            {
+                Node node = new Node
+                {
+                    Value = addValue,
+                    Next = Head
+                };
+
+                Head = node;
+                return;
+            }
             while (Current.Next.Value != searchValue)
             {
                 Current = Current.Next;
@@ -100,23 +120,30 @@ namespace SinglyLinkedList.classes
         }
         public Node KthFromTheEnd(int kth)
         {
-            Current = Head;
-            int amountOfNodes = 1;
-            while (Current.Next != null)
+            try
             {
-                amountOfNodes++;
-                Current = Current.Next;
+                Current = Head;
+                int amountOfNodes = 1;
+                while (Current.Next != null)
+                {
+                    amountOfNodes++;
+                    Current = Current.Next;
+                }
+                int nodeNumber = 1;
+                Current = Head;
+                while (nodeNumber != (amountOfNodes - kth))
+                {
+                    nodeNumber++;
+                    Current = Current.Next;
+                }
+                Console.WriteLine(Current.Value);
+                return Current;
             }
-            int nodeNumber = 1;
-            Current = Head;
-            while (nodeNumber != (amountOfNodes - kth))
+            catch (Exception)
             {
-                nodeNumber++;
-                Current = Current.Next;
+                return null;
             }
-            Console.WriteLine(Current.Value);
-            return Current;
+            
         }
-        
     }
 }
