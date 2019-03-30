@@ -5,78 +5,49 @@ namespace SinglyLinkedList
 {
     public class Program
     {
+        /// <summary>
+        /// the below is calling all of the methods created in the LinkedList class
+        /// </summary>
+        /// <param name="args">i dont know the args going into main</param>
         static void Main(string[] args)
         {
             LList newLink = new LList();
+            Console.WriteLine("Inserting 6 and 4.");
+            newLink.Insert(6);
             newLink.Insert(4);
-            newLink.Insert(345);
-            newLink.Insert(645373545);
-            newLink.PrintAllNodes();
+            newLink.Print();
 
-            Console.WriteLine("Please entere a number for the new node");
-            string newInt = Console.ReadLine();
-            int nodeValue = Convert.ToInt32(newInt);
-            newLink.Insert(nodeValue);
-            newLink.PrintAllNodes();
+            Console.WriteLine();
+            Console.WriteLine("Printing an array of the current values of the nodes.");
+            newLink.Print();
 
-            Console.WriteLine("Please entere a number to search.");
-            string searchString = Console.ReadLine();
-            int searchInt = Convert.ToInt32(searchString);
-            bool printThis = newLink.Includes(searchInt);
-            Console.WriteLine(printThis);
+            Console.WriteLine();
+            Console.WriteLine("InsertBefore(4, 3)");
+            newLink.InsertBefore(4, 3);
+            newLink.Print();
 
+            Console.WriteLine();
+            Console.WriteLine("InsertAfter(4, 7)");
+            newLink.InsertAfter(4,7);
+            newLink.Print();
 
+            Console.WriteLine();
+            Console.WriteLine("Append(9)");
+            newLink.Append(9);
+            newLink.Print();
 
-            Console.WriteLine("Please entere a number to append.");
-            string addString = Console.ReadLine();
-            int addInt = Convert.ToInt32(addString);
-            newLink.Append(addInt);
-            Console.WriteLine("");
-            Console.WriteLine("");
-            newLink.PrintAllNodes();
+            Console.WriteLine();
+            Console.WriteLine("Includes(7)");
+            bool truth = newLink.Includes(7);
+            string newTruth = Convert.ToString(truth);
+            newLink.Print();
+            Console.WriteLine(newTruth);
 
+            Console.WriteLine();
+            Console.WriteLine("KthFromTheEnd(2)");
+            newLink.KthFromTheEnd(2);
+            newLink.Print();
 
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("Please entere a number to add.");
-            string newAddString = Console.ReadLine();
-            int newAddInt = Convert.ToInt32(newAddString);
-            Console.WriteLine("Please entere a number to search.");
-            string newSearch = Console.ReadLine();
-            int newSearchInt = Convert.ToInt32(newSearch);
-            newLink.InsertAfter(newSearchInt, newAddInt);
-
-            Console.WriteLine("");
-            Console.WriteLine("");
-            newLink.PrintAllNodes();
-
-
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("Please entere a number to add.");
-            string addAfterString = Console.ReadLine();
-            int addAfterInt = Convert.ToInt32(addAfterString);
-            Console.WriteLine("Please entere a number to search.");
-            string addAfterSearchString = Console.ReadLine();
-            int addAfterSearchInt = Convert.ToInt32(addAfterSearchString);
-            newLink.InsertBefore(addAfterSearchInt, addAfterInt);
-
-            Console.WriteLine("");
-            Console.WriteLine("");
-            newLink.PrintAllNodes();
-
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("Please entere the node you want to get to.");
-            string nodeNumberString = Console.ReadLine();
-            int nodeNumberInt = Convert.ToInt32(nodeNumberString);
-            newLink.KthFromTheEnd(nodeNumberInt);
-            Console.WriteLine("");
-            Console.WriteLine("");
         }
     }
 }
