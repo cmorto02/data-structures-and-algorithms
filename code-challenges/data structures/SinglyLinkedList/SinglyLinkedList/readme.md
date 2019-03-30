@@ -20,6 +20,13 @@ A C# implementation of a `Singly Linked List`. Singly Linked Lists contain indiv
 | Insert | Adds a new `Node` to the `Linked List` | O(1) | O(1) | myList.Insert(99) |
 | Includes | Takes in a value and returns a boolean depending on if the value is in the `LinkedList` | O(n) | O(1) | myList.Includes(99) |
 | Print | Prints the `Linked List` to the console | O(n) | O(1) | myList.Print() |
+| Append | Adds a new `Node` to the end of the `LinkedList` | O(n) | O(1) | myList.Append(99) |
+| InsertAfter | Adds a new `Node` to the `LinkedList` after the `Node` of a specified value | O(n) | O(1) | myList.InsertAfter(98, 99) |
+| InsertBefore | Adds a new `Node` to the `LinkedList` before the `Node` of a specified value | O(n) | O(1) | myList.InsertBefore(98, 99) |
+| KthFromTheEnd | returns the value of a `Node` that is the Kth from the end of the `Linked List` | O(n) | O(1) | myList.KthFromTheEnd(5) |
+
+
+
 
 
 ------------------------------
