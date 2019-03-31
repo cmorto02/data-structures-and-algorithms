@@ -7,10 +7,7 @@ namespace LLMerge
     {
         static void Main(string[] args)
         {
-            LList ALink = new LList();
-            ALink.Insert(8);
-            ALink.Insert(6);
-            ALink.Insert(4);
+            LList ALink = null;
 
             LList BLink = new LList();
             BLink.Insert(9);
@@ -18,32 +15,53 @@ namespace LLMerge
             BLink.Insert(5);
 
             LList list = MergeLists(ALink, BLink);
-            list.PrintAllNodes();
 
         }
+        /// <summary>
+        /// This method takes in two linked lists and merges them in a zipper fashion
+        /// </summary>
+        /// <param name="A">linked list a </param>
+        /// <param name="B">linked list b </param>
+        /// <returns>the merged linked list</returns>
         public static LList MergeLists(LList A, LList B)
         {
-            Node ACurrent = A.Head;
-            Node BCurrent = B.Head;
-            Node C = BCurrent.Next;
-            while (ACurrent != null && BCurrent != null)
+            try
             {
-                C = BCurrent.Next;
-                BCurrent.Next = ACurrent.Next;
-                ACurrent.Next = BCurrent;
-                BCurrent = C;
-                ACurrent = ACurrent.Next.Next;
-            }
-            if (ACurrent == null && BCurrent != null)
-            {
-                while (BCurrent != null)
+                Node ACurrent = A.Head;
+                Node BCurrent = B.Head;
+                Node C = BCurrent.Next;
+                if (A.Head == null)
                 {
-                    A.Append(BCurrent.Value);
-                    BCurrent = BCurrent.Next;
+                    return B;
                 }
-            }            
-            return A;
+                if (B.Head == null)
+                {
+                    return A;
+                }
+                while (ACurrent != null && BCurrent != null)
+                {
+                    C = BCurrent.Next;
+                    BCurrent.Next = ACurrent.Next;
+                    ACurrent.Next = BCurrent;
+                    BCurrent = C;
+                    ACurrent = ACurrent.Next.Next;
+                }
+                if (ACurrent == null && BCurrent != null)
+                {
+                    while (BCurrent != null)
+                    {
+                        A.Append(BCurrent.Value);
+                        BCurrent = BCurrent.Next;
+                    }
+                }
+                return A;
 
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
         }
     }
 }
