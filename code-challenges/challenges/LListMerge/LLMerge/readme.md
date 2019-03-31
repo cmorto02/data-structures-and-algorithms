@@ -9,4 +9,4 @@ Our Big O is O(n) for space and O(n) for time.
 I will be refactoring to get to O(1) for space.
 
 ## Solution
-![alt text] (https://github.com/cmorto02/data-structures-and-algorithms/blob/master/code-challenges/challenges/LListMerge/LLMerge/LLMerge/images/20190327_135604.jpg)
+![alt text](https://github.com/cmorto02/data-structures-and-algorithms/blob/master/code-challenges/challenges/LListMerge/LLMerge/LLMerge/images/20190327_135604.jpg)
