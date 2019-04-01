@@ -14,13 +14,16 @@ namespace stacksAndQueues.classes
             Node<T> node = new Node<T>
             {
                 Value = data,
-                Next = Front
+                Next = null
             };
-            Rear = node;
+            Rear.Next = node;
         }
         public Node<T> Dequeue()
         {
-            
+            Node<T> temp = Front;
+            Front = Front.Next;
+            temp.Next = null;
+            return temp;
         }
         public T Peek()
         {
