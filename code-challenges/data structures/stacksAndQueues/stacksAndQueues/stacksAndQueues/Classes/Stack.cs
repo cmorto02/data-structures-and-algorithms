@@ -22,8 +22,8 @@ namespace stacksAndQueues
         {
             Node<T> node = Top;
             Top = Top.Next;
-            node = null;
-            return Top;
+            node.Next = null;
+            return node;
         }
         public T Peek()
         {
