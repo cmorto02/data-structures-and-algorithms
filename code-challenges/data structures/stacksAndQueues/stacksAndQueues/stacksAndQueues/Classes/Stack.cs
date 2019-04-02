@@ -9,7 +9,7 @@ namespace stacksAndQueues
     {
         public Node<T> Top { get; set; }
         public Node<T> Current { get; set; }
-        public void Push(T data)
+        public Node<T> Push(T data)
         {
             Node<T> node = new Node<T>
             {
@@ -17,6 +17,7 @@ namespace stacksAndQueues
                 Next = Top
             };
             Top = node;
+            return node;
         }
         public Node<T> Pop()
         {
