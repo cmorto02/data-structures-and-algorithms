@@ -1,25 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using stacksAndQueues;
 using stacksAndQueues.classes;
+using System;
+using System.Text;
 
 namespace queueWithStacks
 {
-    class PseudoQueue
+    public class PseudoQueue
     {
-        Stack<int> main = new Stack<int>();
-        Stack<int> temp = new Stack<int>();
+        public Stack<int> Main { get; set; }
+        public Stack<int> Temp { get; set; }
 
-        public void Enqueue(int value)
+        public PseudoQueue()
         {
-            while ( main.Peek != null )
+            Main = new Stack<int>();
+            Temp = new Stack<int>();
+        }
+        public void Enqueue(int data)
+        {
+            while (Main.Top != null)
             {
-                temp.Push(main.Pop());
+                Node<int> moving = Main.Pop();
+                Temp.Push(moving.Value);
+            }
+            Main.Push(data);
+            while (Temp.Top != null)
+            {
+                Node<int> moving = Temp.Pop();
+                Main.Push(moving.Value);
             }
         }
         public void Dequeue()
         {
-
+            Main.Pop();
         }
     }
 }
