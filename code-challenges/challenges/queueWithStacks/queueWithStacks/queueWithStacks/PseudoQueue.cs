@@ -12,9 +12,9 @@ namespace queueWithStacks
 
         public void Enqueue(int value)
         {
-            while (  )
+            while ( main.Peek != null )
             {
-                
+                temp.Push(main.Pop());
             }
         }
         public void Dequeue()
