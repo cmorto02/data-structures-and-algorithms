@@ -9,7 +9,7 @@ namespace MultiBracketValidation
     {
         static void Main(string[] args)
         {
-            string input = "({[{()t}t]t}t])";
+            string input = "{}]{}";
             string result = Convert.ToString(MultiBracketValidation(input));
             Console.WriteLine(result);
         }
@@ -26,6 +26,10 @@ namespace MultiBracketValidation
                 if (charInputArray[i] == ')' || charInputArray[i] == '}' || charInputArray[i] == ']')
                 {
                     char result = main.Pop().Value;
+                    if (main.Top == null)
+                    {
+                        return false;
+                    }
                     if (charInputArray[i] == ')' && result != '(' || charInputArray[i] == '}' && result != '{' || charInputArray[i] == ']' && result != '[')
                     {
                         return false;
