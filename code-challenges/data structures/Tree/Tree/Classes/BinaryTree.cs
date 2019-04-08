@@ -8,44 +8,45 @@ namespace Tree.Classes
     {
         public Node<T> Root { get; set; }
         public Node<T> Current { get; set; }
-        Queue<T> queue = new Queue<T>();
        
-        public void PreOrder(Node<T> Root, Queue<T> queue)
+        public List<T> PreOrder(Node<T> Root, List<T> list)
         {
-            queue.Enqueue(Root.Value);
+            list.Add(Root.Value);
             if (Root.LeftChild != null)
             {
-                PreOrder(Root.LeftChild, queue);
+                PreOrder(Root.LeftChild, list);
             }
             if (Root.RightChild != null)
             {
-                PreOrder(Root.RightChild, queue);
+                PreOrder(Root.RightChild, list);
             }
+            return list;
         }
-        public void InOrder(Node<T> Root, Queue<T> queue)
+        public List<T> InOrder(Node<T> Root, List<T> list)
         {
             if (Root.LeftChild != null)
             {
-                InOrder(Root.LeftChild, queue);
+                InOrder(Root.LeftChild, list);
             }
-            queue.Enqueue(Root.Value);
+            list.Add(Root.Value);
             if (Root.RightChild != null)
             {
-                InOrder(Root.RightChild, queue);
+                InOrder(Root.RightChild, list);
             }
+            return list;
         }
-        public void PostOrder(Node<T> Root, Queue<T> queue)
+        public List<T> PostOrder(Node<T> Root, List<T> list)
         {
             if (Root.LeftChild != null)
             {
-                PostOrder(Root.LeftChild, queue);
+                PostOrder(Root.LeftChild, list);
             }
             if (Root.RightChild != null)
             {
-                PostOrder(Root.RightChild, queue);
+                PostOrder(Root.RightChild, list);
             }
-            queue.Enqueue(Root.Value);
-
+            list.Add(Root.Value);
+            return list;
         }
     }
 }

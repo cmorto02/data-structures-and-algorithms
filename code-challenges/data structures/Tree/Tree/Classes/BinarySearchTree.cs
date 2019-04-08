@@ -5,28 +5,59 @@ using Tree.Classes;
 
 namespace Tree.Classes
 {
-    public class BinarySearchTree<T>
+    public class BinarySearchTree
     {
         public Node<int> Root {get; set;}
+        public Node<int> Current { get; set; }
 
-        public void Add(int value)
+        public void Add(int value, Node<int> root)
         {
             Node<int> node = new Node<int>
             {
                 Value = value
             };
-            if (Root == null)
+            if (root == null)
             {
-                node = Root;
+                node = root;
             }
-            if (node.Value < Root.Value)
+            if (node.Value < root.Value)
             {
-                node = Root.LeftChild;
+                if (root.LeftChild == null)
+                {
+                    node = root.LeftChild;
+                }
+                else
+                {
+                    Add(value, root.LeftChild);
+                }
             }
-            if (node.Value > Root.Value)
+            if (node.Value >= root.Value)
             {
-                node = Root.RightChild;
+                if (root.RightChild == null)
+                {
+                    node = root.RightChild;
+                }
+                else
+                {
+                    Add(value, root.RightChild);
+                }
             }
+        }
+        public bool Contains(int value, Node<int> root)
+        {
+            if (root.Value == value)
+            {
+                return true;
+            }
+            if (root.Value < value)
+            {
+                Contains(value, root.LeftChild);
+            }
+            if (root.Value >= value)
+            {
+                Contains(value, root.RightChild);
+            }
+            return false;
         }
     }
 }
