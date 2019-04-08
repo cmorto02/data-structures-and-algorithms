@@ -18,3 +18,5 @@
 16. Value vs Reference
 ## Data Structures
 1. Link Lists
+2. Stacks and Queues
+3. Binary Trees
