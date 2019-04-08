@@ -34,7 +34,7 @@
 
 ## Visuals
 
-![Image 1](https://github.com/cmorto02/data-structures-and-algorithms/blob/master/code-challenges/data%20structures/SinglyLinkedList/SinglyLinkedList/LinkedListTesting/images/SLL.JPG)
+![Image 1](https://github.com/cmorto02/data-structures-and-algorithms/blob/master/code-challenges/data%20structures/stacksAndQueues/stacksAndQueues/stacksAndQueues/images/stacksandqueues.JPG)
 
 ##### Push Method
 *The Push Method takes in an int as a parameter. A new Node is then created using the* 
