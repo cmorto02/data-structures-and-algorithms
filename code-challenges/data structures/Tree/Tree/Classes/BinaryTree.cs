@@ -8,6 +8,7 @@ namespace Tree.Classes
     {
         public Node<T> Root { get; set; }
         public Node<T> Current { get; set; }
+        List<T> list = new List<T>();
        
         public List<T> PreOrder(Node<T> Root, List<T> list)
         {

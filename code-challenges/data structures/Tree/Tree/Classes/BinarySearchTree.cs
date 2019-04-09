@@ -10,6 +10,11 @@ namespace Tree.Classes
         public Node<int> Root {get; set;}
         public Node<int> Current { get; set; }
 
+        public BinarySearchTree()
+        {
+            Root = null;
+        }
+
         public void Add(int value, Node<int> root)
         {
             Node<int> node = new Node<int>
@@ -19,6 +24,7 @@ namespace Tree.Classes
             if (root == null)
             {
                 node = root;
+                return;
             }
             if (node.Value < root.Value)
             {
