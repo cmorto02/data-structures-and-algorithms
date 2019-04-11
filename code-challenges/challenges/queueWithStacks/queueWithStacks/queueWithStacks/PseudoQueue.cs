@@ -7,31 +7,38 @@ namespace queueWithStacks
 {
     public class PseudoQueue
     {
-        public Stack<int> Main { get; set; }
-        public Stack<int> Temp { get; set; }
+        public Stack<int> Front { get; set; }
+        public Stack<int> Back { get; set; }
+       
 
         public PseudoQueue()
         {
-            Main = new Stack<int>();
-            Temp = new Stack<int>();
+            Front = new Stack<int>();
+            Back = new Stack<int>();
         }
+        /// <summary>
+        /// This pushes a node into the "back" of the pseudoqueue
+        /// </summary>
+        /// <param name="data">the node value data(int)</param>
         public void Enqueue(int data)
         {
-            while (Main.Top != null)
-            {
-                Node<int> moving = Main.Pop();
-                Temp.Push(moving.Value);
-            }
-            Main.Push(data);
-            while (Temp.Top != null)
-            {
-                Node<int> moving = Temp.Pop();
-                Main.Push(moving.Value);
-            }
+            Back.Push(data);
         }
-        public void Dequeue()
+        /// <summary>
+        /// This moves all of he back into the front of the queue if the front is empty, and then removes the "front" node from the pseudoqueue
+        /// </summary>
+        /// <returns>Returns the dequeued value(int)</returns>
+        public int Dequeue()
         {
-            Main.Pop();
+            if (Front.Top == null)
+            {
+                while (Back.Top != null)
+                {
+                    int moving = Back.Pop().Value;
+                    Front.Push(moving);
+                }
+            }
+            return Front.Pop().Value;
         }
     }
 }
