@@ -21,16 +21,16 @@ namespace Tree.Classes
             {
                 Value = value
             };
-            if (root == null)
+            if (Root == null)
             {
-                node = root;
+                Root = node;
                 return;
             }
             if (node.Value < root.Value)
             {
                 if (root.LeftChild == null)
                 {
-                    node = root.LeftChild;
+                    root.LeftChild = node;
                 }
                 else
                 {
@@ -41,7 +41,7 @@ namespace Tree.Classes
             {
                 if (root.RightChild == null)
                 {
-                    node = root.RightChild;
+                    root.RightChild = node;
                 }
                 else
                 {
@@ -51,17 +51,27 @@ namespace Tree.Classes
         }
         public bool Contains(int value, Node<int> root)
         {
+            if (root == null)
+            {
+                return false;
+            }
             if (root.Value == value)
             {
                 return true;
             }
-            if (root.Value < value)
+            if (value >= root.Value)
             {
-                Contains(value, root.LeftChild);
+                if (Contains(value, root.RightChild))
+                {
+                    return true;
+                }
             }
-            if (root.Value >= value)
+            if (value < root.Value)
             {
-                Contains(value, root.RightChild);
+                if (Contains(value, root.LeftChild))
+                {
+                    return true;
+                }
             }
             return false;
         }
