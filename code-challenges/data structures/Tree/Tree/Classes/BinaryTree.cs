@@ -4,12 +4,17 @@ using System.Text;
 
 namespace Tree.Classes
 {
-    class BinaryTree<T>
+    public class BinaryTree<T>
     {
         public Node<T> Root { get; set; }
         public Node<T> Current { get; set; }
         List<T> list = new List<T>();
-       
+       /// <summary>
+       /// preorder recursive traversal of a tree
+       /// </summary>
+       /// <param name="Root">root of the tree</param>
+       /// <param name="list">list to contain traversed values</param>
+       /// <returns>list of traversed node values</returns>
         public List<T> PreOrder(Node<T> Root, List<T> list)
         {
             list.Add(Root.Value);
@@ -23,6 +28,12 @@ namespace Tree.Classes
             }
             return list;
         }
+        /// <summary>
+        /// In order recursive traversal of a tree
+        /// </summary>
+        /// <param name="Root">root of the tree</param>
+        /// <param name="list">list to hold traversed values</param>
+        /// <returns>list of traversed node values</returns>
         public List<T> InOrder(Node<T> Root, List<T> list)
         {
             if (Root.LeftChild != null)
@@ -36,6 +47,12 @@ namespace Tree.Classes
             }
             return list;
         }
+        /// <summary>
+        /// postorder recursive traversal of a tree
+        /// </summary>
+        /// <param name="Root">root node of the tree</param>
+        /// <param name="list">list to hold traversed values</param>
+        /// <returns>list of traversed node values</returns>
         public List<T> PostOrder(Node<T> Root, List<T> list)
         {
             if (Root.LeftChild != null)

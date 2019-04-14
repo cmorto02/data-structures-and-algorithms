@@ -14,7 +14,11 @@ namespace Tree.Classes
         {
             Root = null;
         }
-
+        /// <summary>
+        /// Adds new nodes to the Binary search tree, begins at the root and checks to see where to put node based on value greater or less than root. 
+        /// </summary>
+        /// <param name="value">value of the data in the new node</param>
+        /// <param name="root">root of the tree</param>
         public void Add(int value, Node<int> root)
         {
             Node<int> node = new Node<int>
@@ -49,6 +53,12 @@ namespace Tree.Classes
                 }
             }
         }
+        /// <summary>
+        /// Checks to see if the BST contains a certain value
+        /// </summary>
+        /// <param name="value">value to search</param>
+        /// <param name="root">root of the tree</param>
+        /// <returns>boolean, true if found</returns>
         public bool Contains(int value, Node<int> root)
         {
             if (root == null)
