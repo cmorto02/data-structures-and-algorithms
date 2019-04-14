@@ -1,7 +1,7 @@
 # ***Data Structure Implementation README***
 ------------------------------
 
-# Stacks and Queues
+# Binary Tree and Binary Search Tree
 #### *Author: Chris Morton*
 
 ------------------------------
@@ -33,7 +33,7 @@
 
 ## Visuals
 
-![Image 1](https://github.com/cmorto02/data-structures-and-algorithms/blob/master/code-challenges/data%20structures/stacksAndQueues/stacksAndQueues/stacksAndQueues/images/stacksandqueues.JPG)
+![Image 1](https://github.com/cmorto02/data-structures-and-algorithms/blob/master/code-challenges/data%20structures/Tree/Tree/images/BST.JPG)
 
 ------------------------------
 
