@@ -19,16 +19,21 @@ namespace Tree
             tree.Add(67, tree.Root);
             tree.Add(234, tree.Root);
 
+            Console.WriteLine("Binary Search Tree Add: 34, 3, 67");
+            Console.WriteLine();
+            Console.WriteLine("Root.Value:");
             Console.WriteLine(tree.Root.Value);
+            Console.WriteLine("RightChild.Value");
             Console.WriteLine(tree.Root.RightChild.Value);
+            Console.WriteLine("LeftChild.Value:");
             Console.WriteLine(tree.Root.LeftChild.Value);
-            Console.WriteLine(tree.Root.LeftChild.RightChild.Value);
 
 
-            bool truth = tree.Contains(27, tree.Root);
+            Console.WriteLine("Contins: 3");
+            bool truth = tree.Contains(3, tree.Root);
             Console.WriteLine(truth);
 
-
+            Console.WriteLine("Binary Tree: PreOrder");
             BinaryTree<int> bT = new BinaryTree<int>();
             Node<int> node1 = new Node<int>()
             {
@@ -77,8 +82,10 @@ namespace Tree
 
             pre.ForEach(i => Console.Write("{0} ", i));
             Console.WriteLine();
+            Console.WriteLine("Binary Tree: InOrder");
             inorder.ForEach(i => Console.Write("{0} ", i));
             Console.WriteLine();
+            Console.WriteLine("Binary Tree: PostOrder");
             post.ForEach(i => Console.Write("{0} ", i));
         }
     }
