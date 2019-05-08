@@ -18,14 +18,16 @@ namespace graph
             graph.AddUndirectedEdge(b, c, 5);
             graph.AddUndirectedEdge(a, c, 6);
 
-            graph.Count();
+            //graph.Count();
 
-            var vertexList = graph.GetVertices();
+            //var vertexList = graph.GetVertices();
 
-            foreach (var item in vertexList)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in vertexList)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            graph.Print();
         }
     }
 }
